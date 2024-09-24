@@ -1,0 +1,86 @@
+* {
+  box-sizing: border-box;
+}
+
+.main-container {
+  display: flex;
+  justify-content: space-evenly;
+  height: 100%;
+}
+
+.left {
+  flex: 1;
+  width: 50%;
+}
+
+.left div {
+  position: absolute;
+  height: 400px;
+  width: 400px;
+}
+
+.left #light-purple {
+  z-index: 1;
+  left: 50px;
+  top: 190px;
+  background-color: #D5CAEB;
+}
+
+.left #purple {
+  z-index: 2;
+  left: 150px;
+  top: 140px;
+  background-color: #B19CD9;
+}
+
+.center {
+  justify-content: space-between;
+  text-align: center;
+  height: 100%;
+  margin: 100px 0;
+  padding: 50px 20px;
+  background-image: url("/assets/cloudy-purple.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.center li {
+  list-style-type: none;
+}
+
+.right {
+  flex: 1;
+  width: 50%;
+  margin: 50px;
+}
+
+h1 {
+  font-size: 50px;
+}
+
+h2 {
+  font-size: 40px;
+  color: #593392;
+}
+
+.my-photo {
+  height: 400px;
+  width: 400px;
+}
+
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 20px;
+  font-size: 20px;
+}
+
+.row {
+  padding: 0 20px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
