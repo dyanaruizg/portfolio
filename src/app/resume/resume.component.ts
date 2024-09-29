@@ -9,4 +9,11 @@ import { Component } from '@angular/core';
 })
 export class ResumeComponent {
 
+  exportResume() {
+    let link = document.createElement("a");
+    link.download = "DianaRG_Resume.pdf";
+    link.href = "assets/resume.pdf";
+    link.click();
+  }
+
 }
