@@ -68,6 +68,13 @@ import { Component } from '@angular/core';
       margin-top: 10px;
       cursor: pointer;
     }
+
+    a {
+      text-decoration: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
   `
 })
 export class ProjectsComponent {

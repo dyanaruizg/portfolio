@@ -10,7 +10,7 @@ import { Component } from '@angular/core';
         <div class="left">
           <div id="light-purple"></div>
           <div id="purple">
-            <img src="/assets/my-photo.jpg" alt="My Photo" class="my-photo">
+            <img src="assets/my-photo.jpg" alt="My Photo" class="my-photo">
           </div>
         </div>
 
@@ -112,7 +112,7 @@ import { Component } from '@angular/core';
       height: 100%;
       margin: 100px 0;
       padding: 50px 20px;
-      background-image: url("/assets/cloudy-purple.jpg");
+      background-image: url(/assets/cloudy-purple.jpg);
       background-repeat: no-repeat;
       background-size: cover;
     }
