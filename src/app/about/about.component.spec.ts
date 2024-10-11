@@ -17,6 +17,9 @@ describe('AboutComponent', () => {
     fixture.detectChanges();
   });
 
+  /**
+   * Unit test that is created by default when the component is generated.
+   */
   it('should create', () => {
     expect(component).toBeTruthy();
   });
