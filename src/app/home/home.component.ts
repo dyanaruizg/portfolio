@@ -36,109 +36,68 @@ import { Component } from '@angular/core';
         </div>
 
         <div class="row">
-            <ul class="column">
-              <li>{{ bucketList[0] }}</li>
-              <li>{{ bucketList[1] }}</li>
-              <li>{{ bucketList[2] }}</li>
-              <li>{{ bucketList[3] }}</li>
-              <li>{{ bucketList[4] }}</li>
-              <li>{{ bucketList[5] }}</li>
-              <li>{{ bucketList[6] }}</li>
-              <li>{{ bucketList[7] }}</li>
-            </ul>
-            <ul class="column">
-              <li>{{ bucketList[8] }}</li>
-              <li>{{ bucketList[9] }}</li>
-              <li>{{ bucketList[10] }}</li>
-              <li>{{ bucketList[11] }}</li>
-              <li>{{ bucketList[12] }}</li>
-              <li>{{ bucketList[13] }}</li>
-              <li>{{ bucketList[14] }}</li>
-              <li>{{ bucketList[15] }}</li>
-            </ul>
-            <ul class="column">
-              <li>{{ bucketList[16] }}</li>
-              <li>{{ bucketList[17] }}</li>
-              <li>{{ bucketList[18] }}</li>
-              <li>{{ bucketList[19] }}</li>
-              <li>{{ bucketList[20] }}</li>
-              <li>{{ bucketList[21] }}</li>
-              <li>{{ bucketList[22] }}</li>
-              <li>{{ bucketList[23] }}</li>
-            </ul>
+          <ul class="list mobile">
+          @for (item of bucketList; track item) {
+            <li>{{ item }}</li>
+          }
+          </ul>
+
+          <ul class="column tab-desk">
+            <li>{{ bucketList[0] }}</li>
+            <li>{{ bucketList[1] }}</li>
+            <li>{{ bucketList[2] }}</li>
+            <li>{{ bucketList[3] }}</li>
+            <li>{{ bucketList[4] }}</li>
+            <li>{{ bucketList[5] }}</li>
+            <li>{{ bucketList[6] }}</li>
+            <li>{{ bucketList[7] }}</li>
+          </ul>
+          <ul class="column tab-desk">
+            <li>{{ bucketList[8] }}</li>
+            <li>{{ bucketList[9] }}</li>
+            <li>{{ bucketList[10] }}</li>
+            <li>{{ bucketList[11] }}</li>
+            <li>{{ bucketList[12] }}</li>
+            <li>{{ bucketList[13] }}</li>
+            <li>{{ bucketList[14] }}</li>
+            <li>{{ bucketList[15] }}</li>
+          </ul>
+          <ul class="column tab-desk">
+            <li>{{ bucketList[16] }}</li>
+            <li>{{ bucketList[17] }}</li>
+            <li>{{ bucketList[18] }}</li>
+            <li>{{ bucketList[19] }}</li>
+            <li>{{ bucketList[20] }}</li>
+            <li>{{ bucketList[21] }}</li>
+            <li>{{ bucketList[22] }}</li>
+            <li>{{ bucketList[23] }}</li>
+          </ul>
         </div>
       </div>
     </div>
   `,
   styles: `
-    * {
-      box-sizing: border-box;
+    h2 {
+      color: #593392;
     }
 
-    .main-container {
-      display: flex;
-      justify-content: space-evenly;
-      height: 100%;
-    }
-
-    .left {
-      flex: 1;
-      width: 50%;
-    }
-
-    .left div {
-      position: absolute;
-      height: 400px;
-      width: 400px;
-    }
-
-    .left #light-purple {
-      z-index: 1;
-      left: 50px;
-      top: 190px;
-      background-color: #D5CAEB;
-    }
-
-    .left #purple {
-      z-index: 2;
-      left: 150px;
-      top: 140px;
-      background-color: #B19CD9;
+    p {
+      font-size: 1.15em;
+      text-align: justify;
+      text-justify: inter-word;
     }
 
     .center {
       justify-content: space-between;
       text-align: center;
       height: 100%;
-      margin: 100px 0;
-      padding: 50px 20px;
-      background-image: url(/assets/cloudy-purple.jpg);
+      background-image: url("https://dyanaruizg.github.io/portfolio/assets/cloudy-purple.jpg");
       background-repeat: no-repeat;
       background-size: cover;
     }
 
     .center li {
       list-style-type: none;
-    }
-
-    .right {
-      flex: 1;
-      width: 50%;
-      margin: 50px;
-    }
-
-    h1 {
-      font-size: 50px;
-    }
-
-    h2 {
-      font-size: 40px;
-      color: #593392;
-    }
-
-    .my-photo {
-      height: 400px;
-      width: 400px;
     }
 
     .column {

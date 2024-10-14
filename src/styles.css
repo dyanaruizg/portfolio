@@ -1,71 +1,53 @@
-/* You can add global styles to this file, and also import other style files */
+/* Import Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Open+Sans:ital,wdth,wght@0,75..100,300..800;1,75..100,300..800&family=Playpen+Sans:wght@100..800&display=swap');
 
-body, header, nav, main, section, footer, img, figure, figcaption, div, ul {
+/* CSS Reset style rule */
+body, header, nav, main, section, footer, img, div, ul, li, h1, h2, h3, p {
   margin: 0;
   padding: 0;
   border: 0;
 }
 
+/* Style rules for body */
 body {
   height: 100%;
 }
 
-.wrapper {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  margin: 0 auto;
-}
-
-.main-content {
-  display: flex;
-  flex: 1;
-}
-
+/* Style rules for navigation area */
 .navbar {
-  display: flex;
-  align-items: center;
-  position: sticky;
-  justify-content: space-between;
-  background: #FFF;
-  overflow: hidden;
-  padding: 10px 20px;
-  left: 0;
-  top: 0;
-  z-index: 100;
-}
-
-.navbar .title {
-  display: flex;
+  background: white;
+  text-align: center;
 }
 
 .navbar .title a {
-  color: #000000;
+  display: block;
+  color: black;
+  padding: 0.5em 2em;
   font-family: "Playpen Sans", cursive;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
-  font-size: 20px;
+  font-size: 1.25em;
   text-decoration: none;
 }
 
 .navbar .menu-right {
-  display: flex;
+  list-style-type: none;
 }
 
 .navbar .menu-right li {
-  list-style: none;
-  margin: 0 15px;
+  border-top: 0.5px solid black;
 }
 
 .navbar .menu-right li a {
-  color: #000000;
+  display: block;
+  color: black;
+  padding: 0.5em 2em;
   font-family: "Josefin Sans", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
-  font-size: 17px;
+  font-size: 1.15em;
   text-decoration: none;
 }
 
@@ -82,6 +64,11 @@ body {
   font-optical-sizing: auto;
   font-weight: 700;
   font-style: normal;
+}
+
+/* Style rules for main content */
+* {
+  box-sizing: border-box;
 }
 
 h1 {
@@ -104,6 +91,11 @@ h3 {
   font-variation-settings: "wdth" 100;
 }
 
+main {
+  display: flex;
+  flex: 1;
+}
+
 .content {
   flex: 1;
   font-family: "Open Sans", sans-serif;
@@ -114,21 +106,251 @@ h3 {
   background-color: #FFF;
 }
 
+/* Style rules for home component */
+.my-photo {
+  width: 100%;
+  height: 50%;
+  border-radius: 5px;
+  padding: 20px;
+  background-color: #D5CAEB;
+}
+
+.main-container .right {
+  padding: 20px;
+}
+
+.home-container h1 {
+  font-size: 2em;
+}
+
+.home-container h2 {
+  font-size: 2em;
+}
+
+.home-container h3 {
+  font-size: 1.3em;
+  margin-top: 15px;
+}
+
+.center {
+  padding: 20px;
+}
+
+.center li {
+  font-size: 1.3em;
+}
+
+/* Style rules for resume component */
+.grid-container {
+  padding: 0 10px 10px 10px;
+}
+
+/* Style rules for about component */
+.about-container {
+  background: linear-gradient(180deg, #D5CAEB 10%, #FFF 10%);
+}
+
+.about-container img {
+  height: 60%;
+  width: 60%;
+}
+
+.about-container h1 {
+  font-size: 2em;
+}
+
+/* Style rules for footer content */
 .footer {
   background-color: #B19CD9;
-  color: #000000;
-  text-align: center;
-  padding: 20px;
+  color: black;
+  padding: 1% 0%;
   font-family: "Gowun Batang", serif;
   font-weight: 700;
   font-style: normal;
 }
 
-.footer a {
-  color: #000000;
-  text-decoration: none;
+.copyright {
+  text-align: center;
 }
 
-.footer a:hover {
-  text-decoration: underline;
+/* Style rules for mobile viewport */
+
+
+/* Style rules to show mobile class and hide tab-desk class*/
+.mobile {
+  display: block;
+}
+
+.tab-desk {
+  display: none;
+}
+
+/* Media Query for Tablet Viewport */
+@media screen and (min-width: 620px) {
+  /* Tablet Viewport: Styles for nav area */
+  nav li {
+    border-top: none;
+    display: inline-block;
+    font-size: 1.25em;
+  }
+
+  nav li a {
+    padding: 0.5em;
+  }
+
+}
+/*Media Query for Print */
+@media print {
+  body {
+    background-color: white;
+    color: black;
+  }
+}
+
+/* Media Query for Desktop Viewport */
+@media screen and (min-width: 1000px) {
+  /* Style rules to hide mobile class and show tab-desk class*/
+  .mobile {
+      display: none;
+  }
+
+  .tab-desk {
+      display: block;
+  }
+
+   /* Desktop Viewport: Style rules for nav area */
+   .wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0 auto;
+  }
+
+  .navbar {
+    display: flex;
+    align-items: center;
+    position: sticky;
+    justify-content: space-between;
+    background: white;
+    overflow: hidden;
+    padding: 10px 20px;
+    left: 0;
+    top: 0;
+    z-index: 100;
+  }
+
+  .navbar .title {
+    display: flex;
+  }
+
+  .navbar .title a {
+    font-size: 20px;
+    padding: 0%;
+  }
+
+  .navbar .menu-right li {
+    border: none;
+    margin: 0 15px;
+  }
+
+  .navbar .menu-right li a {
+    font-size: 17px;
+    padding: 0%;
+  }
+
+  /* Desktop Viewport: Style rules for main content */
+
+  /* Style rules for home component */
+  .main-container {
+    display: flex;
+    justify-content: space-evenly;
+    height: 100%;
+  }
+
+  .left {
+    flex: 1;
+    width: 50%;
+  }
+
+  .left div {
+    position: absolute;
+    height: 400px;
+    width: 400px;
+  }
+
+  .left #light-purple {
+    z-index: 1;
+    left: 50px;
+    top: 190px;
+    background-color: #D5CAEB;
+  }
+
+  .left #purple {
+    z-index: 2;
+    left: 150px;
+    top: 140px;
+    background-color: #B19CD9;
+  }
+
+  .my-photo {
+    height: 400px;
+    width: 400px;
+    padding: 0;
+  }
+
+  .center {
+    margin-top: 100px;
+    padding: 50px 20px;
+  }
+
+  .right {
+    flex: 1;
+    width: 50%;
+    margin: 50px;
+  }
+
+  .home-container h1 {
+    font-size: 50px;
+    margin-top: 10px;
+  }
+
+  .home-container h2 {
+    font-size: 40px;
+  }
+
+  .home-container h3 {
+    padding: 20px 0;
+  }
+
+  /* Style rules for resume component */
+  .grid-container {
+    padding: 0 50px 50px 50px;
+  }
+
+  .title {
+    font-size: 30px;
+  }
+
+  /* Style rules for about component */
+  .about-container {
+    background: linear-gradient(180deg, #D5CAEB 30%, #FFF 30%);
+  }
+
+  .about-container img {
+    height: 30%;
+    width: 30%;
+    padding-top: 50px;
+  }
+
+  .about-container h1 {
+    font-size: 50px;
+  }
+
+  .about-container p {
+    padding: 0 80px 50px 80px;
+  }
+
+  /* Style rules for projects component */
+
+
 }

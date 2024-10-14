@@ -1,3 +1,16 @@
+export interface Education {
+  title: string;
+  school: string;
+  years: string;
+}
+
+export interface Experience {
+  title: string;
+  company: string;
+  years: string;
+  tasks: string[];
+}
+
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 
@@ -11,117 +24,107 @@ import { Component } from '@angular/core';
     <div class="grid-container">
       <div class="grid-item-1">
         <h1>Education</h1>
-        <div class="column">
-          <p>
-            <strong>HIGH SCHOOL</strong>
-            <br> Centro de Bachillerato Tecnologico
-            <br> industrial y de servicios No. 37
-            <br> <em>2012 - 2015</em>
-          </p>
-        </div>
+        <ul class="mobile">
+          @for (degree of education; track degree) {
+            <li class="list">
+              <p>
+                <strong>{{ degree.title }}</strong>
+                <br> {{ degree.school }}
+                <br> <em>{{ degree.years }}</em>
+              </p>
+            </li>
+          }
+        </ul>
 
-        <div class="column">
-          <p>
-            <strong>
-              BACHELOR'S DEGREE IN
-              <br> COMPUTER SYSTEMS ENGINEER
-            </strong>
-            <br> Instituto Tecnologico Superior de Cajeme
-            <br> <em>2015 - 2019</em>
-          </p>
-        </div>
-
-        <div class="column">
-          <p>
-            <strong>BACHELOR OF SCIENCE IN WEB DEVELOPMENT</strong>
-            <br> Bellevue University
-            <br> <em>2023 - present</em>
-          </p>
-        </div>
+        @for (degree of education; track degree) {
+          <div class="column tab-desk">
+            <p>
+              <strong>{{ degree.title }}</strong>
+              <br> {{ degree.school }}
+              <br> <em>{{ degree.years }}</em>
+            </p>
+          </div>
+        }
       </div>
 
       <div class="grid-item-2">
         <h1>Skills</h1>
-        <div class="column">
+        <ul class="mobile">
+          @for (skill of skills; track skill) {
+            <li>{{ skill }}</li>
+          }
+        </ul>
+
+        <div class="column tab-desk">
           <ul>
-            <li>- Problem resolution</li>
-            <li>- Friendly, positive attitude</li>
-            <li>- Advanced engineering knowledge</li>
-            <li>- Teamwork</li>
+            <li>{{ skills[0] }}</li>
+            <li>{{ skills[1] }}</li>
+            <li>{{ skills[2] }}</li>
+            <li>{{ skills[3] }}</li>
           </ul>
         </div>
 
-        <div class="column">
+        <div class="column tab-desk">
           <ul>
-            <li>- Flexible</li>
-            <li>- Multitasking</li>
-            <li>- Helpful communication</li>
-            <li>- Goal-oriented and ambitious</li>
+            <li>{{ skills[4] }}</li>
+            <li>{{ skills[5] }}</li>
+            <li>{{ skills[6] }}</li>
+            <li>{{ skills[7] }}</li>
           </ul>
         </div>
 
-        <div class="column">
+        <div class="column tab-desk">
           <ul>
-            <li>- Development of technical skills</li>
-            <li>- Bilingual - English/Spanish</li>
-            <li>- Knowledge of Java, Python, C++, JavaScript,
-              HTML, Angular, SQL, NoSQL, Kotlin, React,
-              Swift, NodeJS, Express and TypeScript.</li>
+            <li>{{ skills[8] }}</li>
+            <li>{{ skills[9] }}</li>
+            <li>{{ skills[10] }}</li>
           </ul>
         </div>
       </div>
 
       <div class="grid-item-1">
         <h1>Experience</h1>
-        <div class="column">
-          <p>
-            <strong>LEADERSHIP ASSOCIATE</strong>
-            <br> Macy's
-            <br> <em>2021 - present</em>
-          </p>
-          <hr>
-          <ul>
-            <li>- Monitor team performance and communicate metrics.</li>
-            <li>- Make decisions to achieve a goal.</li>
-            <li>- Provide the support and advice needed to make an impact with
-              each colleague.</li>
-          </ul>
-        </div>
-        <div class="column">
-          <p>
-            <strong>SEASONAL DEPARTMENT HOURLY SUPERVISOR</strong>
-            <br> Macy's
-            <br> <em>Sep 2022 - Jan 2023, Sep 2023 - Dec 2023</em>
-          </p>
-          <hr>
-          <ul>
-            <li>- Coordinate the tasks that each colleague will carry out.</li>
-            <li>- Responsible for ensuring that all employees fulfill their
-              responsibilities.</li>
-            <li>- Manage conflicts and solve problems.</li>
-          </ul>
-        </div>
-        <div class="column">
-          <p>
-            <strong>MOBILE DEVELOPER</strong>
-            <br> NSoluciones de Software
-            <br> <em>2018 - 2020</em>
-          </p>
-          <hr>
-          <ul>
-            <li>- Used best practices to identify and fix bugs.</li>
-            <li>- Develop a mobile CRM system.</li>
-            <li>- Create detailed documentation on the operation of the application.</li>
-          </ul>
-        </div>
+        <ul class="mobile">
+          @for (job of experience; track job) {
+            <li class="list">
+              <p>
+                <strong>{{ job.title }}</strong>
+                <br> {{ job.company }}
+                <br> <em>{{ job.years }}</em>
+              </p>
+              <hr>
+              <ul>
+                @for (task of job.tasks; track task) {
+                  <li>{{ task }}</li>
+                }
+              </ul>
+            </li>
+          }
+        </ul>
+
+        @for (job of experience; track job) {
+          <div class="column tab-desk">
+            <p>
+              <strong>{{ job.title }}</strong>
+              <br> {{ job.company }}
+              <br> <em>{{ job.years }}</em>
+            </p>
+            <hr>
+            <ul>
+              @for (task of job.tasks; track task) {
+                <li>{{ task }}</li>
+              }
+            </ul>
+          </div>
+        }
       </div>
 
       <div class="grid-item-2">
         <h1>Certifications</h1>
         <ul>
-          <li>- Basics of HTML</li>
-          <li>- Angular - The Complete Guide (2023 Edition)</li>
-          <li>- Microsoft Office</li>
+          @for (certification of certifications; track certification) {
+            <li>{{ certification }}</li>
+          }
         </ul>
       </div>
 
@@ -133,7 +136,6 @@ import { Component } from '@angular/core';
   `,
   styles: `
     .grid-container {
-      padding: 0 50px 50px 50px;
       text-align: center;
     }
 
@@ -153,6 +155,14 @@ import { Component } from '@angular/core';
       list-style-type: none;
     }
 
+    li, p {
+      font-size: 1.15em;
+    }
+
+    .list {
+      padding: 5px;
+    }
+
     .column {
       float: left;
       width: 33.33%;
@@ -167,7 +177,6 @@ import { Component } from '@angular/core';
     }
 
     .title {
-      font-size: 30px;
       text-align: center;
     }
 
@@ -184,6 +193,89 @@ import { Component } from '@angular/core';
   `
 })
 export class ResumeComponent {
+
+  education: Education[];
+  skills: string[];
+  experience: Experience[];
+  certifications: string[];
+
+  constructor() {
+    this.education = [
+      {
+        title: "HIGH SCHOOL",
+        school: "Centro de Bachillerato Tecnologico " +
+          "industrial y de servicios No. 37",
+        years: "2012 - 2015"
+      },
+      {
+        title: "BACHELOR'S DEGREE IN COMPUTER SYSTEMS ENGINEER",
+        school: "Instituto Tecnologico Superior de Cajeme",
+        years: "2015 - 2019"
+      },
+      {
+        title: "BACHELOR OF SCIENCE IN WEB DEVELOPMENT",
+        school: "Bellevue University",
+        years: "2023 - present"
+      }
+    ];
+
+    this.skills = [
+      "- Problem resolution",
+      "- Friendly, positive attitude",
+      "- Advanced engineering knowledge",
+      "- Teamwork",
+      "- Flexible",
+      "- Multitasking",
+      "- Helpful communication",
+      "- Goal-oriented and ambitious",
+      "- Development of technical skills",
+      "- Bilingual - English/Spanish",
+      "- Knowledge of Java, Python, C++, JavaScript, " +
+        "HTML, Angular, SQL, NoSQL, Kotlin, React, " +
+        "Swift, NodeJS, Express and TypeScript."
+    ];
+
+    this.experience = [
+      {
+        title: "LEADERSHIP ASSOCIATE",
+        company: "Macy's",
+        years: "2021 - present",
+        tasks: [
+          "- Monitor team performance and communicate metrics.",
+          "- Make decisions to achieve a goal.",
+          "- Provide the support and advice needed to make an " +
+            "impact with each colleague."
+        ]
+      },
+      {
+        title: "SEASONAL DEPARTMENT HOURLY SUPERVISOR",
+        company: "Macy's",
+        years: "Sep 2022 - Jan 2023, Sep 2023 - Dec 2023",
+        tasks: [
+          "- Coordinate the tasks that each colleague will carry out.",
+          "- Responsible for ensuring that all employees fulfill their " +
+            "responsibilities.",
+          "- Manage conflicts and solve problems."
+        ]
+      },
+      {
+        title: "MOBILE DEVELOPER",
+        company: "NSoluciones de Software",
+        years: "2018 - 2020",
+        tasks: [
+          "- Used best practices to identify and fix bugs.",
+          "- Develop a mobile CRM system.",
+          "- Create detailed documentation on the operation of the application."
+        ]
+      }
+    ];
+
+    this.certifications = [
+      "- Basics of HTML",
+      "- Angular - The Complete Guide (2023 Edition)",
+      "- Microsoft Office"
+    ];
+  }
 
   // Function that export my resume in pdf format
   exportResume() {

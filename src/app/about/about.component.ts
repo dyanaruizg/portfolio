@@ -30,23 +30,12 @@ import { Component } from '@angular/core';
   `,
   styles: `
     .about-container {
-      background: linear-gradient(180deg, #D5CAEB 30%, #FFF 30%);
       padding: 15px;
       text-align: center;
     }
 
-    img {
-      height: 320px;
-      width: 450px;
-      padding-top: 50px;
-    }
-
-    h1 {
-      font-size: 50px;
-    }
-
     p {
-      padding: 0 80px 50px 80px;
+      font-size: 1.15em;
     }
   `
 })
